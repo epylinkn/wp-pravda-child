@@ -1,0 +1,58 @@
+/*
+Theme Name: Pravda - Retina Responsive WordPress Theme Child
+Theme URI:      http://brainfall.com/
+Description:    Child theme for the Pravda theme
+Author:         Josh Palmer, Anthony Bui
+Author URI:     http://example.com/about/
+Template:       wp-pravda
+Version:        0.1.0
+Tags: light, white, flexible-width, custom-menu, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+@import url("../wp-pravda/style.css");
+
+/*-----------------------------------------------------------------------------------*/
+/* Common Styles
+/*-----------------------------------------------------------------------------------*/
+/*override bootstrap radio style*/
+.radio input[type="radio"] {
+	margin: 4px 10px 0 0;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Quiz Styles
+/*-----------------------------------------------------------------------------------*/
+.quiz {
+}
+.quiz-controls {
+	display: none;
+}
+.quiz-controls.no-js {
+	display: block;
+}
+.question {
+	display: none;
+}
+.question.active { display: block; }
+.question-answers { 
+	position: relative;
+}
+.question-answer {
+	display: block;
+	padding: 10px 15px;
+	margin: 5px 0;
+	background: rgb(200,200,200);
+	background: rgba(200,200,200,0.7);
+	position: relative;
+	font-size: 1.5em;
+}
+.question-answer.checked { background: rgb(255, 170, 170); }
+/* show this if no javascript? */
+.question-answer input[type="radio"] {
+	display: none;
+}
+.question-answer input[type="radio"].no-js {
+	display: inline;
+}
+
