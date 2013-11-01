@@ -21,14 +21,14 @@ pr($result);
    } else {
 ?>
 
-<form class="quiz" action="<?php echo $quiz->get_action_url($question_id+1) ?>" method="POST">
+<form class="quiz" action="<?php echo $quiz->get_action_url($question_id+1) ?>" method="POST" data-quiz-id="<?= $quiz->id ?>" data-action-url="?results=true">
 
   <!-- <?php pr($_GET) ?> -->
   <!-- <?php pr($_POST) ?> -->
 
   <!-- loop through and output questions -->
   <?php foreach ($quiz->questions as $qid => $question) { ?>
-  <div class="question <? if ($qid == $question_id) echo 'active'; ?>">
+  <div class="question <? if ($qid == $question_id) echo 'active'; ?>" data-id="<?= $qid+1 ?>">
     <h3><?php echo $question['question'] ?></h3>
 
     <div class="question-answers">
@@ -47,7 +47,7 @@ pr($result);
 
   <!-- next button that hides with js -->
   <?php $value = (false) ? "Submit" : "Next &rarr;" ?>
-  <div class="quiz-controls no-js">
+  <div class="quiz-controls">
     <input type="submit" value="<?php echo $value ?>">
   </div>
 

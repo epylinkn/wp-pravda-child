@@ -1,4 +1,3 @@
-@import url("../wp-pravda/style.css");
 /*
   Theme Name: Pravda - Retina Responsive WordPress Theme Child
   Theme URI:      http://brainfall.com/
@@ -11,44 +10,63 @@
   License: GNU General Public License version 3.0
   License URI: http://www.gnu.org/licenses/gpl-3.0.html
   */
+@import url("../wp-pravda/style.css");
+
 /*-----------------------------------------------------------------------------------*/
 /* Common Styles
-/*-----------------------------------------------------------------------------------*/
+   /*-----------------------------------------------------------------------------------*/
 /*override bootstrap radio style*/
 .radio input[type="radio"] {
-  margin: 4px 10px 0 0; }
+  margin: 4px 10px 0 0;
+}
 
 /*-----------------------------------------------------------------------------------*/
 /* Quiz Styles
-/*-----------------------------------------------------------------------------------*/
-.question {
-  display: none; }
-  .question.active {
-    display: block; }
+   /*-----------------------------------------------------------------------------------*/
+.quiz {
+}
 
+.question {
+  display: none;
+
+  &.active { display: block; }
+}
 .question-answers {
-  position: relative; }
-  .question-answers .question-answer {
+  position: relative;
+
+  .question-answer {
     display: block;
     padding: 10px 15px 10px 20px;
     margin: 5px 0;
-    background: #c8c8c8;
-    background: rgba(200, 200, 200, 0.7);
+    background: rgb(200,200,200);
+    background: rgba(200,200,200,0.7);
     position: relative;
-    font-size: 1.5em; }
-    .question-answers .question-answer.checked, .question-answers .question-answer.checked:hover {
-      background: #ffaaaa; }
-    .question-answers .question-answer:hover {
-      background: rgba(100, 100, 100, 0.7); }
+    font-size: 1.5em;
 
+    &.checked, &.checked:hover { background: rgb(255, 170, 170); }
+    &:hover { background: rgba(100, 100, 100, .7); }
+  }
+}
+
+
+
+
+
+// modernizr switches
 .question-answer input[type="radio"] {
-  display: none; }
-
+  display: none;
+}
 .quiz-controls {
-  display: none; }
+  display: none;
+}
 
-.no-js .question-answer input[type="radio"] {
-  display: block;
-  margin-left: -10px; }
-.no-js .quiz-controls {
-  display: block; }
+.no-js {
+  .question-answer input[type="radio"] {
+    display: block;
+    margin-left: -10px;
+  }
+  .quiz-controls {
+    display: block;
+  }
+}
+
