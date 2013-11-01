@@ -56,12 +56,20 @@ function is_checked($a, $b) {
 
 function child_add_scripts() {
   wp_register_script(
-                     'brainfall',
-                     get_stylesheet_directory_uri() . '/js/brainfall.js',
+                     'backbone',
+                     get_stylesheet_directory_uri() . '/js/backbone-min.js',
                      false,
                      null,
                      true
                      );
+  wp_register_script(
+                     'brainfall',
+                     get_stylesheet_directory_uri() . '/js/brainfall.js',
+                     array('backbone'),
+                     null,
+                     true
+                     );
+  wp_enqueue_script( 'backbone', array('jquery') );
   wp_enqueue_script( 'brainfall', array('jquery') );
 }
 
