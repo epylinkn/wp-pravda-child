@@ -1,6 +1,8 @@
 jQuery.noConflict()(function($){
     "use strict";
     $(document).ready(function() {
+
+        Backbone.history.start({ pushState: true });
         var num_questions = $('.question').length;
 
         $('.question-answer').click(function(evt) {
@@ -12,10 +14,10 @@ jQuery.noConflict()(function($){
             console.log(q_no, num_questions);
             if (q_no == num_questions) {
                 alert('this is the last question. jquery submit form');
-		$('.quiz').attr('action', $('.quiz').data('actionUrl'));
+                $('.quiz').attr('action', $('.quiz').data('actionUrl'));
                 $('.quiz').get(0).submit();
             } else {
-		history.pushState({ "foo": "bar" }, "", "?q=".concat(q_no+1));
+                history.pushState({ "foo": "bar" }, "", "?q=".concat(q_no+1));
                 setTimeout(nextQuestion, 500);
             }
         });

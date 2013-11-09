@@ -11,7 +11,7 @@
    $post_meta = get_fields();
    $quiz = new PersonalityQuiz($post->ID, $post_meta);
 
-   $question_id = (isset($_GET['q'])) ? (int) $_GET['q'] : 0;
+   $question_id = (isset($_GET['q'])) ? (int) $_GET['q'] : 1;
 
    // post results
    if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_GET['results'] == true) {
@@ -28,7 +28,7 @@ pr($result);
 
   <!-- loop through and output questions -->
   <?php foreach ($quiz->questions as $qid => $question) { ?>
-  <div class="question <? if ($qid == $question_id) echo 'active'; ?>" data-id="<?= $qid+1 ?>">
+  <div class="question <? if ($qid == $question_id-1) echo 'active'; ?>" data-id="<?= $qid+1 ?>">
     <h3><?php echo $question['question'] ?></h3>
 
     <div class="question-answers">
