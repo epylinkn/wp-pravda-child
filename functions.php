@@ -1,13 +1,19 @@
 <?php
+define('DEBUG', false);
+
 include_once('models/personality_quiz.php');
-// function to pretty print arrays
-function pr($array=null) {
-  print "<pre><code>"; print_r($array); print "</code></pre>";
+
+function debug($l) {
+  if (DEBUG) { echo $l; }
+}
+// pretty print arrays
+function pr($array=null, $title='') {
+  return "<pre><code>" . $title . ' > ' . print_r($array, true) . "</code></pre>";
 }
 
-/*-----------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
 /*  Enqueues scripts for front-end
-    /*-----------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*/
 add_action('wp_enqueue_scripts', 'child_add_scripts');
 
 function is_checked($a, $b) {
