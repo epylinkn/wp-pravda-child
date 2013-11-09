@@ -213,7 +213,7 @@ if( $post_type == '' ) $post_type = 'standard_post';
 				<?php ct_excerpt_max_charlength($excerpt_lenght); ?>
 			</div><!-- .entry-summary -->
 			<?php else : ?>
-				<?php if ( !empty($ct_excerpt) ) : ?>
+				<?php // if ( !empty($ct_excerpt) ) : ?>
 					<div class="entry-content" itemprop="articleBody" style="color: <?php echo $post_font_color; ?>">
 						<?php $excerpt_function = stripslashes( $ct_data['ct_excerpt_function'] );	?>
 						<?php
@@ -232,7 +232,7 @@ if( $post_type == '' ) $post_type = 'standard_post';
 							get_template_part( 'content', 'quiz' );
 						?>
 					</div><!-- .entry-content -->
-				<?php endif; // empty($ct_excerpt) ?>
+				<?php // endif; // empty($ct_excerpt) ?>
 			<?php endif; ?>
 
 			<div class="clear"></div>
