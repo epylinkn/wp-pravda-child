@@ -1,9 +1,9 @@
 <?
-class TriviaQuiz extends Quiz{
+class PersonalityQuiz extends Quiz{
   var $result_calculator;
 
-  function TriviaQuiz($id, $post_meta) {
-    $this->result_calculator = new TriviaCalculator();
+  function PersonalityQuiz($id, $post_meta) {
+    $this->result_calculator = new PersonalityCalculator();
     super($id, $post_meta);
   }
 
